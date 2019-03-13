@@ -36,7 +36,8 @@ If your function return more than one value. Just chill with c# 7.0, you can ret
             var (sum, count) = Talley(n1);  //Using de-structuring 
             Console.WriteLine($"Sum : { sum}, Count : { count}");
             
-or
+            OR
+            
             int[] numbers = { 1, 2, 5, 7, 9, 2, 66 };
 
             var t = Talley(numbers);
@@ -44,6 +45,62 @@ or
             Console.WriteLine($"Sum : {t.sum}, Count : { t.count}");
             
 ## 3. Local Function
+
+In above Tuples Example, you see Add() method which scope only within the Talley() method. Thus Add() is the Local function to Talley().
+
+## 4. Pattern Mathching
+This is the great feature to c# 7.0.Prior to C# 7.0, Is operator was used to check the type of a variable and based on the type, it returns true or false but with C# 7.0, Is Expression provides following three types of pattern matching
+
+1. Const Pattern
+2. Type Pattern
+3. Var Pattern
+
+        static void IsConstExpression()
+        {
+        Object obj = 2;
+        string name = "Brij";
+
+        // null check
+        if (obj is null)
+            Console.WriteLine("Obj is null");
+
+        // Constant value check
+        if(obj is 2)
+            Console.WriteLine("Obj has value 2");
+
+        // String value check
+        if(name is "Brij")
+            Console.WriteLine("name has value \"Brij\"");
+        }
+        
+In C# 7.0 now switch expression is for everything, due to Expression Matching. Follwing is the example for some 
+Type pattern.
+
+     //pattern matching with switch statement
+            public static void PatternWithSwitch(object shape)
+            {
+                switch (shape) //switch on anything
+                {
+                    case Rectangle s when (s.Length == s.Height):     //special rectangle if length and hight is same --- WOW !! this is an square
+                        Console.WriteLine($"Square with Length= {s.Length} and Height={s.Height}");
+                        break;
+
+                case Rectangle r:
+                    Console.WriteLine($"Rectangle with Length= {r.Length} and Height={r.Height}");
+                    break;
+
+                case Circle c:
+                    Console.WriteLine($"Circle with radius {c.Radius}");
+                    break;
+
+                case null:
+                    throw new NullReferenceException(nameof(shape));
+                    
+                default:
+                    Console.WriteLine($"<Unknown Shape>");
+                    break;
+            }
+       
 
     
    
