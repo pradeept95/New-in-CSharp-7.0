@@ -102,5 +102,34 @@ Type pattern.
             }
        
 
-    
-   
+  Now this function can be use as follows for differnt type of object 
+       //Case Null
+                try
+                {
+                    PatternWithSwitch(null);
+                }
+                catch (Exception ex)
+                {
+
+                Console.WriteLine($"Exception : - {ex.Message}");
+            }
+
+
+            //Case Circle
+            var circle = new Circle();
+            circle.Radius = 10;
+            PatternWithSwitch(circle);
+
+            //Case Rectangle
+            var rect = new Rectangle();
+            rect.Length = 10;
+            rect.Height = 7; 
+            PatternWithSwitch(rect);
+
+
+            //Case Square
+            var sq = new Rectangle();
+            sq.Length = sq.Height = 10; 
+            PatternWithSwitch(sq); 
+
+   AWESOME c#, follow me on GitHub for more awesome implementation
