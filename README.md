@@ -36,9 +36,11 @@ If your function return more than one value. Just chill with c# 7.0, you can ret
             var (sum, count) = Talley(n1);  //Using de-structuring 
             Console.WriteLine($"Sum : { sum}, Count : { count}");
             
-or 
+or
             int[] numbers = { 1, 2, 5, 7, 9, 2, 66 };
-            var t = Talley(numbers); 
+
+            var t = Talley(numbers);
+
             Console.WriteLine($"Sum : {t.sum}, Count : { t.count}");
             
 ## 3. Local Function
