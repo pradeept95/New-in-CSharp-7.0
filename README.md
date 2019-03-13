@@ -6,6 +6,7 @@ Some awesome feature in c# 7.0
 ## 1. Binary literals and digit seperators
 
 C# 7.0 provides the great feature for the number writing convention
+
     int[] n1 = { 0b1, 0b10 , 0b1000, 12345689012345678};
     int[] n2 = { 0b1, 0b10 , 0b1_000, 123_45_68_901_2345_678};
     
